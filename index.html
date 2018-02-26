@@ -3,6 +3,7 @@
 <head>
 	<title>NY Times Search</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Abel|Abril+Fatface" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,6 +13,51 @@
 
 	</div>
 
+	<div class="container formContainer">
+		<h4>Search Parameters</h4>
+
+		<label for="searchTerms">Search Terms</label>
+		<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+		  </div>
+		  <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+		</div>
+
+		<label for="numberRecords">Number of Records to Return</label>
+		<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+		    <label class="input-group-text" for="inputGroupSelect01">Options</label>
+		  </div>
+		  <select class="custom-select" id="inputGroupSelect01">
+		    <option selected>Choose...</option>
+		    <option value="1">One</option>
+		    <option value="5">Five</option>
+		    <option value="10">Ten</option>
+		  </select>
+		</div>
+
+		<label for="startYear">Start Year (optional)</label>
+		<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+		  </div>
+		  <input type="text" class="form-control" placeholder="YYYY" aria-label="start year" aria-describedby="basic-addon1">
+		</div>
+
+		<label for="endYear">End Year (optional)</label>
+		<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+		  </div>
+		  <input type="text" class="form-control" placeholder="YYYY" aria-label="end year" aria-describedby="basic-addon1">
+		</div>
+
+		<button type="submit" id="searchButton" class="btn btn-outline-primary">Submit</button>
+		<button type="button" id= "clearButton" class="btn btn-outline-secondary">Clear Results</button>
+	</div>
+
+	<div class="container">
+		<h4>Top Articles</h4>
+
+	</div>
 
 	<script
 	  	src="https://code.jquery.com/jquery-3.3.1.min.js"

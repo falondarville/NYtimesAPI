@@ -1,3 +1,24 @@
 .jumbotron {
-	background-color: #4682B4;
+	/*background-color: #4682B4;*/
+	background-image: url("../images/statue.png");
+	background-size: cover;
+	background-position: right top;
+}
+
+h1 {
+	text-shadow: 2px 2px white;
+	font-family: 'Abril Fatface', cursive;
+}
+
+.formContainer {
+	margin-bottom: 40px;
+}
+
+h4 {
+	background-color: #21A9AB;
+	padding: 20px;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	font-family: 'Abel', sans-serif;
+	font-weight: bold;
 }
