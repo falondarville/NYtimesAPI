@@ -31,13 +31,23 @@ function runQuery(numberArticles, queryURL) {
 $("#searchButton").on("click", function(event){
 
 	event.preventDefault();
+	//user inputted values to be added to query URL
 	queryTerm = $("#search").val().trim();
-	startYear = $("start").val().trim() + 0101
-	endYear = $("end").val().trim() + 1231
-	numberResults = $("#numberRecords").val().trim();
+	numberResults = $("#numberRecords").val();
+	startYear = $("#start").val().trim() + "0101";
+	endYear = $("#end").val().trim() + "1231";
 
-	var newURL = baseURL + "&q=" + queryTerm + ";
+	var newURL = baseURL + "&q=" + queryTerm;
 
+	if(parseInt(startYear)) {
+		newURL = newURL + "&begin_date=" + startYear;
+	}
+
+	if(parseInt(endYear)){
+		 newURL = newURL + "&end_date=" + endYear;
+	}
+
+	console.log(newURL);
 	runQuery(numberResults, newURL);
 
 });
