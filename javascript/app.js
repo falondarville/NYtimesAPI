@@ -33,25 +33,28 @@ $("#searchButton").on("click", function(event){
 	event.preventDefault();
 	//user inputted values to be added to query URL
 	queryTerm = $("#search").val().trim();
-	numberResults = $("#numberRecords").val();
-	startYear = $("#start").val().trim() + "0101";
-	endYear = $("#end").val().trim() + "1231";
+	// numberResults = $("#numberRecords").val();
+	startYear = $("#start").val().trim();
+	endYear = $("#end").val().trim();
 
 	var newURL = baseURL + "&q=" + queryTerm;
 
 	if(parseInt(startYear)) {
+		startYear += "0101";
 		newURL = newURL + "&begin_date=" + startYear;
 	}
 
 	if(parseInt(endYear)){
+		endYear += "1231";
 		 newURL = newURL + "&end_date=" + endYear;
 	}
 
 	console.log(newURL);
-	runQuery(numberResults, newURL);
+	runQuery(10, newURL);
 
 });
 
+//NYT API does not have a built-in parameter for the number of results to retrieve
 
 
 
