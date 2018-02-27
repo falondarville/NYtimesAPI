@@ -23,17 +23,32 @@ function runQuery(numberArticles, queryURL) {
 		method: "GET"
 	}).done(function(response) {
 
-		console.log(response);
+		$("#resultsContainer").empty();
+
+		for (var i=0; i < numberArticles; i++) {
+
+			var cardBlock = $("<div>").addClass("card card-block bg-faded");
+			
+			cardBlock.append(
+				response.response.docs[i].headline.main + "<br>" +
+				response.response.docs[i].section_name + "<br>" +
+				response.response.docs[i].pub_date + "<br>" +
+				response.response.docs[i].byline.original + "<br>" +
+				"<a href='" + response.response.docs[i].web_url + "'>" + "Read the article here" + "</a>");
+
+			$("#resultsContainer").append(cardBlock);
+
+		}
 	});
 };
 
-
+//NYT API does not have a built-in parameter for the number of results to retrieve
 $("#searchButton").on("click", function(event){
 
 	event.preventDefault();
 	//user inputted values to be added to query URL
 	queryTerm = $("#search").val().trim();
-	// numberResults = $("#numberRecords").val();
+	numberResults = $("#numberRecords").val();
 	startYear = $("#start").val().trim();
 	endYear = $("#end").val().trim();
 
@@ -50,11 +65,19 @@ $("#searchButton").on("click", function(event){
 	}
 
 	console.log(newURL);
-	runQuery(10, newURL);
+	runQuery(numberResults, newURL);
 
 });
 
-//NYT API does not have a built-in parameter for the number of results to retrieve
+$("#clearButton").on("click", function(event) {
+
+	event.preventDefault();
+
+	$("#resultsContainer").empty();
+	queryTerm = $("#search").val("");
+	startYear = $("#start").val("");
+	endYear = $("#end").val("");
+});
 
 
 
