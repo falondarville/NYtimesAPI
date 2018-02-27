@@ -18,13 +18,20 @@ h5 {
 	margin-bottom: 40px;
 }
 
-h4 {
+.headers {
 	background-color: #21A9AB;
 	padding: 20px;
 	border-radius: 5px;
 	margin-bottom: 20px;
 	font-family: 'Abel', sans-serif;
 	font-weight: bold;
+}
+
+.card-block {
+	background-color: #D3D3D3;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 20px;
 }
 
 footer {
